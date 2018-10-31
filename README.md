@@ -18,7 +18,7 @@ npm run dev
 打开微信开发者工具，新建项目，将目录指向 /dist 即可
 ```
 
-##问题
+## 问题
 - 小程序中`this.$emit(event,data)`中：
 `event`有些使用中划线命名法，在mpvue中不支持，需要修改
 - 小程序中`this.trigger('click', index)`中：
