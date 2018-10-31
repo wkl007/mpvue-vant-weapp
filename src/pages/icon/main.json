@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Icon 图标",
+  "usingComponents": {
+    "demo-block": "/static/vant/demo-block/index",
+    "van-col": "/static/vant/col/index",
+    "van-icon": "/static/vant/icon/index"
+  }
+}

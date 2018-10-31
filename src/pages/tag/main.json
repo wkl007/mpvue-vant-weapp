@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Tag 标记",
+  "usingComponents": {
+    "demo-block": "/static/vant/demo-block/index",
+    "van-tag": "/static/vant/tag/index"
+  }
+}

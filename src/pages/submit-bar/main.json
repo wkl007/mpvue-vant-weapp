@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "SubmitBar 提交订单栏",
+  "usingComponents": {
+    "demo-block": "/static/vant/demo-block/index",
+    "van-submit-bar": "/static/vant/submit-bar/index",
+    "van-tag": "/static/vant/tag/index",
+    "van-toast": "/static/vant/toast/index"
+  }
+}

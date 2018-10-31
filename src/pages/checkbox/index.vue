@@ -1,0 +1,108 @@
+<template>
+  <div class="container">
+    <demo-block title="基本用法">
+      <van-checkbox :value="checkbox1" data-key="checkbox1" @change="onChange" custom-class="demo-checkbox">复选框
+      </van-checkbox>
+    </demo-block>
+    <demo-block title="禁用状态">
+      <van-checkbox :value="false" disabled custom-class="demo-checkbox">复选框</van-checkbox>
+      <van-checkbox :value="true" disabled custom-class="demo-checkbox">复选框</van-checkbox>
+    </demo-block>
+    <demo-block title="自定义图标">
+      <van-checkbox :value="checkbox2" data-key="checkbox2" @change="onChange" use-icon-slot
+                    custom-class="demo-checkbox">
+        自定义图标
+        <image mode="widthFix" slot="icon" :src="checkbox2 ? icon.active : icon.normal" class="icon"/>
+      </van-checkbox>
+    </demo-block>
+    <demo-block title="Checkbox 组">
+      <van-checkbox-group :value="result" data-key="result" @change="onChange">
+        <van-checkbox
+          v-for="(item,index) in list"
+          :key="index"
+          :name="item"
+          custom-class="demo-checkbox"
+        >
+          复选框 {{ item }}
+        </van-checkbox>
+      </van-checkbox-group>
+    </demo-block>
+
+    <demo-block title="设置最大可选数">
+      <van-checkbox-group :value="result2" data-key="result2" max="2" @change="onChange">
+        <van-checkbox
+          v-for="(item,index) in list"
+          :key="index"
+          :name="item"
+          custom-class="demo-checkbox"
+        >
+          复选框 {{ item }}
+        </van-checkbox>
+      </van-checkbox-group>
+    </demo-block>
+
+    <demo-block title="与 Cell 组件一起使用">
+      <van-checkbox-group :value="result3" data-key="result3" @change="onChange">
+        <van-cell-group>
+          <van-cell
+            v-for="(item,index) in list"
+            :key="index"
+            :data-name="item"
+            :title="'复选框'+item"
+            clickable
+            @click="toggle"
+          >
+            <van-checkbox :class="'checkboxes-'+item" :name="item"/>
+          </van-cell>
+        </van-cell-group>
+      </van-checkbox-group>
+    </demo-block>
+
+  </div>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        checkbox1: true,
+        checkbox2: true,
+        list: ['a', 'b', 'c'],
+        result: ['a', 'b'],
+        result2: [],
+        result3: [],
+        icon: {
+          normal:
+            'https://img.yzcdn.cn/public_files/2017/10/13/c547715be149dd3faa817e4a948b40c4.png',
+          active:
+            'https://img.yzcdn.cn/public_files/2017/10/13/793c77793db8641c4c325b7f25bf130d.png'
+        }
+      }
+    },
+    methods: {
+      onChange ({mp}) {
+        const {detail, currentTarget: {dataset: {key}}} = mp
+        this[key] = detail
+      },
+      toggle ({mp}) {
+        const {currentTarget: {dataset: {name}}} = mp
+        const checkbox = this.$mp.page.selectComponent(`.checkboxes-${name}`)
+        checkbox.toggle()
+      }
+    }
+  }
+</script>
+
+<style lang="less">
+  .demo-checkbox-group {
+    margin: 10px 0 0 20px;
+  }
+
+  .demo-checkbox {
+    margin: 10px 0 0 20px;
+  }
+
+  .icon {
+    width: 20px;
+  }
+</style>

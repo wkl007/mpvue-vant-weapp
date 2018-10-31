@@ -1,0 +1,30 @@
+<script>
+  export default {}
+</script>
+
+<style lang="less">
+  page {
+    color: #333;
+    font-size: 16px;
+    background: #f8f8f8;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 0 0 ~'100rpx';
+    -webkit-font-smoothing: antialiased;
+    font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
+  }
+
+  .demo-margin-left {
+    margin-left: 10px;
+  }
+
+  .demo-margin-right {
+    margin-right: 10px;
+  }
+
+  .demo-margin-bottom {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+</style>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Switch 开关",
+  "usingComponents": {
+    "demo-block": "/static/vant/demo-block/index",
+    "van-switch": "/static/vant/switch/index"
+  }
+}

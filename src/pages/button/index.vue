@@ -1,0 +1,59 @@
+<template>
+  <div class="container">
+    <demo-block title="按钮类型" padding>
+      <div class="row">
+        <van-button type="primary" custom-class="demo-margin-right">主要按钮</van-button>
+        <van-button type="danger">危险按钮</van-button>
+      </div>
+      <van-button custom-class="demo-margin-right">默认按钮</van-button>
+      <van-button type="warning">警告按钮</van-button>
+    </demo-block>
+    <demo-block title="朴素按钮" padding>
+      <van-button type="primary" plain custom-class="demo-margin-right">朴素按钮</van-button>
+      <van-button type="danger" plain>朴素按钮</van-button>
+    </demo-block>
+
+    <demo-block title="禁用状态" padding>
+      <van-button type="primary" disabled custom-class="demo-margin-right">禁用状态</van-button>
+      <van-button type="danger" disabled>禁用状态</van-button>
+    </demo-block>
+
+    <demo-block title="加载状态" padding>
+      <van-button loading type="primary" custom-class="demo-margin-right" loading-class="loading"/>
+      <van-button loading type="danger" loading-class="loading"/>
+    </demo-block>
+
+    <demo-block title="按钮形状" padding>
+      <van-button type="primary" square custom-class="demo-margin-right">方形按钮</van-button>
+      <van-button type="danger" round>圆形按钮</van-button>
+    </demo-block>
+
+    <demo-block title="按钮尺寸" padding>
+      <van-button size="large" block custom-class="demo-margin-bottom">大号按钮</van-button>
+      <van-button class="demo-margin-right">普通按钮</van-button>
+      <van-button size="small" class="demo-margin-right">小型按钮</van-button>
+      <van-button size="mini">迷你按钮</van-button>
+    </demo-block>
+  </div>
+</template>
+
+<script>
+
+  export default {
+    data () {
+      return {}
+    },
+    methods: {}
+  }
+</script>
+
+<style lang="less">
+  .loading {
+    margin: 0 18px;
+  }
+
+  .row {
+    height: 44px;
+    margin-bottom: 15px;
+  }
+</style>

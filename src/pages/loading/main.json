@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Loading 加载",
+  "usingComponents": {
+    "demo-block": "/static/vant/demo-block/index",
+    "van-loading": "/static/vant/loading/index"
+  }
+}

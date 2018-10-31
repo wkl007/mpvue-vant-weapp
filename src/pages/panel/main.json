@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Panel 面板",
+  "usingComponents": {
+    "demo-block": "/static/vant/demo-block/index",
+    "van-panel": "/static/vant/panel/index",
+    "van-button": "/static/vant/button/index"
+  }
+}
