@@ -34,7 +34,8 @@
     "pages/radio/main",
     "pages/checkbox/main",
     "pages/goods-action/main",
-    "pages/swipe-cell/main"
+    "pages/swipe-cell/main",
+    "pages/datetime-picker/main"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8",
