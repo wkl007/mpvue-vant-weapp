@@ -2,11 +2,16 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var queue = [];
 
+function getContext() {
+  var pages = getCurrentPages();
+  return pages[pages.length - 1];
+}
+
 var Dialog = function Dialog(options) {
+  options = _extends({}, Dialog.currentOptions, options);
   return new Promise(function (resolve, reject) {
-    var pages = getCurrentPages();
-    var ctx = pages[pages.length - 1];
-    var dialog = ctx.selectComponent(options.selector);
+    var context = options.context || getContext();
+    var dialog = context.selectComponent(options.selector);
     delete options.selector;
 
     if (dialog) {
@@ -15,6 +20,8 @@ var Dialog = function Dialog(options) {
         onConfirm: resolve
       }, options));
       queue.push(dialog);
+    } else {
+      console.warn('未找到 van-dialog 节点，请确认 selector 及 context 是否正确');
     }
   });
 };
@@ -26,6 +33,7 @@ Dialog.defaultOptions = {
   zIndex: 100,
   overlay: true,
   asyncClose: false,
+  transition: 'scale',
   selector: '#van-dialog',
   confirmButtonText: '确认',
   cancelButtonText: '取消',
@@ -34,13 +42,10 @@ Dialog.defaultOptions = {
   closeOnClickOverlay: false,
   confirmButtonOpenType: ''
 };
-
-Dialog.alert = function (options) {
-  return Dialog(_extends({}, Dialog.currentOptions, options));
-};
+Dialog.alert = Dialog;
 
 Dialog.confirm = function (options) {
-  return Dialog(_extends({}, Dialog.currentOptions, {
+  return Dialog(_extends({
     showCancelButton: true
   }, options));
 };
