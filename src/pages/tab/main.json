@@ -1,8 +1,3 @@
 {
-  "navigationBarTitleText": "Tab 标签页",
-  "usingComponents": {
-    "demo-block": "/static/vant/demo-block/index",
-    "van-tab": "/static/vant/tab/index",
-    "van-tabs": "/static/vant/tabs/index"
-  }
+  "navigationBarTitleText": "Tab 标签页"
 }

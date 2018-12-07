@@ -1,8 +1,3 @@
 {
-  "navigationBarTitleText": "Toast 轻提示",
-  "usingComponents": {
-    "demo-block": "/static/vant/demo-block/index",
-    "van-toast": "/static/vant/toast/index",
-    "van-button": "/static/vant/button/index"
-  }
+  "navigationBarTitleText": "Toast 轻提示"
 }

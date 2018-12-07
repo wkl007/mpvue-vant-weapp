@@ -1,8 +1,3 @@
 {
-  "navigationBarTitleText": "Tabbar 标签栏",
-  "usingComponents": {
-    "demo-block": "/static/vant/demo-block/index",
-    "van-tabbar": "/static/vant/tabbar/index",
-    "van-tabbar-item": "/static/vant/tabbar-item/index"
-  }
+  "navigationBarTitleText": "Tabbar 标签栏"
 }

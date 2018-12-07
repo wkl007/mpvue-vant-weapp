@@ -1,8 +1,3 @@
 {
-  "navigationBarTitleText": "Stepper 步进器",
-  "usingComponents": {
-    "demo-block": "/static/vant/demo-block/index",
-    "van-stepper": "/static/vant/stepper/index",
-    "van-panel": "/static/vant/panel/index"
-  }
+  "navigationBarTitleText": "Stepper 步进器"
 }

@@ -1,8 +1,3 @@
 {
-  "navigationBarTitleText": "Layout 布局",
-  "usingComponents": {
-    "demo-block": "/static/vant/demo-block/index",
-    "van-row": "/static/vant/row/index",
-    "van-col": "/static/vant/col/index"
-  }
+  "navigationBarTitleText": "Layout 布局"
 }

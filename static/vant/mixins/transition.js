@@ -27,13 +27,13 @@ export var transition = function transition(showDefaultValue) {
         if (value) {
           this.show();
         } else {
-          this.setData({
+          this.set({
             type: 'leave'
           });
         }
       },
       show: function show() {
-        this.setData({
+        this.set({
           inited: true,
           display: true,
           type: 'enter'
@@ -41,7 +41,7 @@ export var transition = function transition(showDefaultValue) {
       },
       onAnimationEnd: function onAnimationEnd() {
         if (!this.data.show) {
-          this.setData({
+          this.set({
             display: false
           });
         }

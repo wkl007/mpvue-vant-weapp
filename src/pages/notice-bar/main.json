@@ -1,7 +1,3 @@
 {
-  "navigationBarTitleText": "NoticeBar 通告栏",
-  "usingComponents": {
-    "demo-block": "/static/vant/demo-block/index",
-    "van-notice-bar": "/static/vant/notice-bar/index"
-  }
+  "navigationBarTitleText": "NoticeBar 通告栏"
 }

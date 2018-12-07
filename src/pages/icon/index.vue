@@ -1,124 +1,78 @@
 <template>
-  <div class="container">
-    <demo-block title="图标列表">
+  <van-tabs
+    :active="active"
+    @change="onSwitch"
+  >
+    <van-tab title="基础图标" custom-class="demo-tab-pane">
       <van-col
+        v-for="(item,index) in basic"
+        :key="index"
         custom-class="col"
         span="8"
-        v-for="(item,index) in icons"
-        :key="index"
       >
-        <van-icon custom-class="icon" :name="item" size="32px"/>
+        <van-icon
+          :name="item"
+          size="32px"
+          custom-class="icon"
+        />
         <view class="text">{{ item }}</view>
       </van-col>
-    </demo-block>
-  </div>
+    </van-tab>
+    <van-tab title="线框风格" custom-class="demo-tab-pane">
+      <van-col
+        v-for="(item,index) in outline"
+        :key="index"
+        custom-class="col"
+        span="8"
+      >
+        <van-icon
+          :name="item"
+          size="32px"
+          custom-class="icon"
+        />
+        <view class="text">{{ item }}</view>
+      </van-col>
+    </van-tab>
+    <van-tab title="实底风格" custom-class="demo-tab-pane">
+      <van-col
+        v-for="(item,index) in filled"
+        :key="index"
+        custom-class="col"
+        span="8"
+      >
+        <van-icon
+          :name="item"
+          size="32px"
+          custom-class="icon"
+        />
+        <view class="text">{{ item }}</view>
+      </van-col>
+    </van-tab>
+  </van-tabs>
 </template>
 
 <script>
+  import config from './config'
+
+  const basic = config.basic.map(item => item.css)
+  const outline = config.outline.map(item => item.css)
+  const filled = config.filled.map(item => item.css)
 
   export default {
     data () {
       return {
-        icons: [
-          'close',
-          'upgrade',
-          'add-o',
-          'passed',
-          'chat',
-          'question',
-          'clock',
-          'gold-coin',
-          'play',
-          'pause',
-          'stop',
-          'more-o',
-          'info-o',
-          'share',
-          'aim',
-          'like-o',
-          'logistics',
-          'edit',
-          'exchange',
-          'location',
-          'cart',
-          'shop',
-          'gift',
-          'contact',
-          'wap-home',
-          'points',
-          'discount',
-          'point-gift',
-          'after-sale',
-          'edit-data',
-          'delete',
-          'records',
-          'completed',
-          'certificate',
-          'tosend',
-          'sign',
-          'photo',
-          'idcard',
-          'home',
-          'free-postage',
-          'cash-back-record',
-          'points-mall',
-          'exchange-record',
-          'pending-payment',
-          'pending-orders',
-          'pending-deliver',
-          'pending-evaluate',
-          'password-view',
-          'password-not-view',
-          'check',
-          'arrow',
-          'arrow-left',
-          'search',
-          'success',
-          'fail',
-          'add',
-          'checked',
-          'warn',
-          'clear',
-          'underway',
-          'more',
-          'like',
-          'photograph',
-          'qr-invalid',
-          'qr',
-          'add2',
-          'wechat',
-          'alipay',
-          'wap-nav',
-          'ecard-pay',
-          'balance-pay',
-          'peer-pay',
-          'credit-pay',
-          'debit-pay',
-          'other-pay',
-          'shopping-cart',
-          'browsing-history',
-          'goods-collect',
-          'shop-collect',
-          'receive-gift',
-          'send-gift',
-          'setting',
-          'coupon',
-          'gift-card-pay',
-          'cash-on-deliver',
-          'phone',
-          'description',
-          'card',
-          'value-card',
-          'gift-card',
-          'hot',
-          'new',
-          'new-arrival',
-          'hot-sale',
-          'cart-o'
-        ]
+        basic,
+        outline,
+        filled,
+        active: 0
       }
     },
-    methods: {}
+    methods: {
+      onSwitch ({mp}) {
+        const {index} = mp.detail
+        this.active = index
+      }
+    }
   }
 </script>
 
@@ -140,4 +94,9 @@
   .text {
     font-size: 14px;
   }
+
+  .demo-tab-pane {
+    padding-top: 10px;
+  }
+
 </style>

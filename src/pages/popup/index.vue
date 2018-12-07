@@ -10,9 +10,9 @@
         内容
       </van-popup>
     </demo-block>
+
     <demo-block title="弹出位置" padding>
       <van-button @click="toggleBottomPopup" custom-class="demo-margin-right">底部弹出</van-button>
-
       <van-popup
         :show="show.bottom"
         position="bottom"

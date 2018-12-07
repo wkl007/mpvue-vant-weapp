@@ -28,10 +28,10 @@ npm run dev
 `this.$emit('click-left'); => this.$emit('clickLeft');`
 `this.trigger('click', index);=>this.trigger('iclick', index);`
 
-> 注：本次示例中修改了`nav-bar`、`nav-tabs`、`nav-field`、`tree-select`组件
+> 注：本次示例中修改了`nav-bar`、`tabs`、`field`、`tree-select`组件
 
 ## 受影响组件(仅传值情况受影响)
 1. nav-bar
-2. nav-tabs
-3. nav-field
+2. tabs
+3. field
 4. tree-select

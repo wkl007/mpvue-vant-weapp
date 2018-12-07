@@ -1,7 +1,3 @@
 {
-  "navigationBarTitleText": "TreeSelect 分类选择",
-  "usingComponents": {
-    "demo-block": "/static/vant/demo-block/index",
-    "van-tree-select": "/static/vant/tree-select/index"
-  }
+  "navigationBarTitleText": "TreeSelect 分类选择"
 }
