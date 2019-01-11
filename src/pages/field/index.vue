@@ -12,7 +12,7 @@
           label="用户名"
           placeholder="请输入用户名"
           clearable
-          icon="question"
+          icon="question-o"
           icon-class="icon"
           required
           @clickIcon="onClickIcon"

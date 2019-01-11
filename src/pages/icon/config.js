@@ -6,6 +6,10 @@ export default {
       css: 'success'
     },
     {
+      src: 'plus.svg',
+      css: 'plus'
+    },
+    {
       src: 'cross.svg',
       css: 'cross'
     },
@@ -31,6 +35,18 @@ export default {
     }
   ],
   outline: [
+    {
+      src: 'location-o.svg',
+      css: 'location-o'
+    },
+    {
+      src: 'like-o.svg',
+      css: 'like-o'
+    },
+    {
+      src: 'star-o.svg',
+      css: 'star-o'
+    },
     {
       src: 'close.svg',
       css: 'close'

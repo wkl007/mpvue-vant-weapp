@@ -26,6 +26,10 @@ VantComponent({
     customStyle: String,
     useIconSlot: Boolean,
     useButtonSlot: Boolean,
+    showConfirmBar: {
+      type: Boolean,
+      value: true
+    },
     placeholderStyle: String,
     adjustPosition: {
       type: Boolean,
@@ -55,17 +59,6 @@ VantComponent({
   data: {
     showClear: false
   },
-  computed: {
-    inputClass: function inputClass() {
-      var data = this.data;
-      return this.classNames('input-class', 'van-field__input', {
-        'van-field--error': data.error,
-        'van-field__textarea': data.type === 'textarea',
-        'van-field__input--disabled': data.disabled,
-        ["van-field__input--" + data.inputAlign]: data.inputAlign
-      });
-    }
-  },
   beforeCreate: function beforeCreate() {
     this.focused = false;
   },
@@ -81,9 +74,7 @@ VantComponent({
         value: value,
         showClear: this.getShowClear(value)
       }, function () {
-        _this.$emit('input', value);
-
-        _this.$emit('change', value);
+        _this.emitChange(value);
       });
     },
     onFocus: function onFocus(event) {
@@ -98,11 +89,14 @@ VantComponent({
         height: height
       });
       this.focused = true;
+      this.blurFromClear = false;
       this.set({
         showClear: this.getShowClear()
       });
     },
     onBlur: function onBlur(event) {
+      var _this2 = this;
+
       var _ref3 = event.detail || {},
           _ref3$value = _ref3.value,
           value = _ref3$value === void 0 ? '' : _ref3$value,
@@ -114,9 +108,21 @@ VantComponent({
         cursor: cursor
       });
       this.focused = false;
-      this.set({
-        showClear: this.getShowClear()
-      });
+      var showClear = this.getShowClear();
+
+      if (this.data.value === value) {
+        this.set({
+          showClear: showClear
+        });
+      } else if (!this.blurFromClear) {
+        // fix: the handwritten keyboard does not trigger input change
+        this.set({
+          value: value,
+          showClear: showClear
+        }, function () {
+          _this2.emitChange(value);
+        });
+      }
     },
     onClickIcon: function onClickIcon() {
       this.$emit('clickIcon');
@@ -126,21 +132,24 @@ VantComponent({
       return this.data.clearable && this.focused && value && !this.data.readonly;
     },
     onClear: function onClear() {
-      var _this2 = this;
+      var _this3 = this;
 
+      this.blurFromClear = true;
       this.set({
         value: '',
         showClear: this.getShowClear('')
       }, function () {
-        _this2.$emit('input', '');
+        _this3.emitChange('');
 
-        _this2.$emit('change', '');
-
-        _this2.$emit('clear', '');
+        _this3.$emit('clear', '');
       });
     },
     onConfirm: function onConfirm() {
       this.$emit('confirm', this.data.value);
+    },
+    emitChange: function emitChange(value) {
+      this.$emit('input', value);
+      this.$emit('change', value);
     }
   }
 });
